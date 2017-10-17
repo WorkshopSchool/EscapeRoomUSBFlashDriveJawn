@@ -1,3 +1,7 @@
+//Aaron Jeffers-Howard and bk 
+//Workshop School Fall 2017 
+//Dr. Millers Advisory, escape room project...
+
 void setup() {
   //size(100, 100); //make program of certian size
   fullScreen();
