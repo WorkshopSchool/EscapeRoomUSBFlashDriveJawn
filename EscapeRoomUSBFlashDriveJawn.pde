@@ -1,14 +1,24 @@
 //Aaron Jeffers-Howard and bk 
 //Workshop School Fall 2017 
 //Dr. Millers Advisory, escape room project...
+PImage bg, water, bigben, liberty, sking1, sking2, elements, waves, zoobity;
 
 void setup() {
   //size(100, 100); //make program of certian size
   fullScreen();
+  bg = loadImage("desktop.png");
+  water = loadImage("aqua.png");
+  bigben = loadImage("BigBenFranklin.png");
+  liberty = loadImage("libbell.png");
+  sking1 = loadImage("sking.png");
+  sking2 = loadImage("sking2.png");
+  elements = loadImage("theelements.png");
+  waves = loadImage("waves.png");
+  zoobity = loadImage("zoobitybop.png");
 }
 
 void draw() {
-  background(0); // normal background color
+  background(bg); // normal background color
   File dir = new File("/Volumes"); //pull up list of volumes
   String[] children = dir.list(); //assign list to string
   if (children == null) { //if there is nothing do nothing
@@ -17,13 +27,36 @@ void draw() {
     for (int i=0; i<children.length; i++) { //go through each list item
       // Get filename of file or directory
       String bk = children[i]; //
-      if (bk.equals("KINGSTON")) { //if there is an item equal to the value do below
-        background(0, 255, 0);
-      } //set background green
+      if (bk.equals("DELTA")) { //if there is an item equal to the value do below
+        background(255, 255, 0);
 
-      if (bk.equals("UNTITLED")) { //if there is an item equal to the value do below
-        background(0, 0, 255);
-      } //set background green
+        image(sking2, 0, 0);
+        textSize(45);
+        fill(0);
+        text("You can, you should, and if you're brave enough to start, you will.", 10, height/2+150);
+      } //set background yellow
+      if (bk.equals("STIGMA")) { //if there is an item equal to the value do below
+        background(155);
+        image(bigben, 0, 0);
+        image(liberty, width/2+50, 10);
+        image(zoobity, width/2-50, height/2+100);
+      } //set background grey
+      if (bk.equals("OMEGA")) { //if there is an item equal to the value do below
+        background(0);
+        image(water, 0, 0);
+        image(elements, width/2+50, 10);
+        image(waves, width/2, height/2);
+      } //set background blk
+      if (bk.equals("THETA")) { //if there is an item equal to the value do below
+        background(255, 0, 0);
+        fill(0);
+        textSize(45);
+        text("I was born in ____", 10, 60);
+        text("In Independence Hall", 10, 100);
+        text("I am very precious to most Americans", 10, 140);
+        text("and signed by 56 people in all.", 10, 180);
+        text("I am the Declaration of Independence.", 10, 220);
+      } //set background red/blk
     }
   }
 }
